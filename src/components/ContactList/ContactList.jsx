@@ -1,6 +1,9 @@
 import { ContactCard } from 'components/ContactCard/ContactCard';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { getContacts } from 'redux/store';
 
-export const ContactList = ({ contacts, onDelete }) => {
+export const ContactList = ({ onDelete }) => {
+  const contacts = useSelector(getContacts);
   return (
     <ul>
       {contacts.map(contact => (
